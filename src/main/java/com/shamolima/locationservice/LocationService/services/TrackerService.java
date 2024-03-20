@@ -11,5 +11,5 @@ public interface TrackerService {
     ViewTrackerDTO getTracker(int id);
     TrackerListDTO getTrackerList(int start, int size);
 
-    Tracker updateTracker(AddTrackerDTO addTrackerDTO);
+    ViewTrackerDTO updateTracker(int id, AddTrackerDTO addTrackerDTO);
 }

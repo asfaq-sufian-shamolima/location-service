@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/trackers")
 public class TrackerController {
 
-    private TrackerService trackerService;
+    private final TrackerService trackerService;
 
     public TrackerController(TrackerService trackerService) {
         this.trackerService = trackerService;
@@ -39,6 +39,14 @@ public class TrackerController {
         TrackerListDTO trackerList = trackerService.getTrackerList(start, size);
 
         return new ResponseEntity<>(trackerList, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ViewTrackerDTO> updateTracker(@PathVariable int id,
+                                                        @RequestBody AddTrackerDTO addTrackerDTO) {
+        ViewTrackerDTO trackerDTO = trackerService.updateTracker(id, addTrackerDTO);
+
+        return new ResponseEntity<>(trackerDTO, HttpStatus.OK);
     }
 
 }
