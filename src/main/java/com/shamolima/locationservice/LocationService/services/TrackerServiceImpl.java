@@ -5,11 +5,14 @@ import com.shamolima.locationservice.LocationService.dto.TrackerListDTO;
 import com.shamolima.locationservice.LocationService.dto.ViewTrackerDTO;
 import com.shamolima.locationservice.LocationService.entities.Tracker;
 import com.shamolima.locationservice.LocationService.repositories.TrackerRepository;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -45,15 +48,15 @@ public class TrackerServiceImpl implements TrackerService{
     }
 
     @Override
-    public TrackerListDTO getTrackerList(int start, int size) {
+    public TrackerListDTO getTrackerList(@Min(0) @Max(1000) int start, @Min(1) @Max(20) int size) {
         Sort.TypedSort<Tracker> trackerSort = Sort.sort(Tracker.class);
         Sort sort = trackerSort.by(Tracker::getName)
                 .descending();
         Pageable pageable = PageRequest.of(start, size, sort);
 
-        trackerRepository.findAll(pageable);
+        List<Tracker> trackerList = trackerRepository.findAll(pageable).toList();
 
-        return null;
+        return new TrackerListDTO(trackerList);
     }
 
     @Override
