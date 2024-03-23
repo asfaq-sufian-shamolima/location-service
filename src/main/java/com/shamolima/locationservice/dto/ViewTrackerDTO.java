@@ -1,6 +1,6 @@
-package com.shamolima.locationservice.LocationService.dto;
+package com.shamolima.locationservice.dto;
 
-import com.shamolima.locationservice.LocationService.entities.Tracker;
+import com.shamolima.locationservice.entities.Tracker;
 
 public record ViewTrackerDTO(int id,
                              String name,

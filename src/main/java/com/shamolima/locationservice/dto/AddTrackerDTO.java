@@ -1,4 +1,4 @@
-package com.shamolima.locationservice.LocationService.dto;
+package com.shamolima.locationservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.annotation.Nonnull;

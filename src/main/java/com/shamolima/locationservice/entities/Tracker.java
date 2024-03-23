@@ -1,4 +1,4 @@
-package com.shamolima.locationservice.LocationService.entities;
+package com.shamolima.locationservice.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,7 +15,7 @@ public class Tracker {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)

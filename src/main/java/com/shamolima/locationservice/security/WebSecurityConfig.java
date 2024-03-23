@@ -1,4 +1,4 @@
-package com.shamolima.locationservice.LocationService.security;
+package com.shamolima.locationservice.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,12 @@ public class WebSecurityConfig {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(customizer -> customizer.anyRequest().authenticated())
+                .authorizeHttpRequests(customizer -> customizer
+                        //.requestMatchers("/actuator/**").permitAll()
+                        .anyRequest()
+                        .permitAll()
+                        //.authenticated()
+                )
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }

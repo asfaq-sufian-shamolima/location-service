@@ -3,7 +3,7 @@
 -- changeset create-employee:1
 create table trackers (
     id int primary key,
-    name varchar(30) not null unique,
+    name varchar(30) not null,
     url varchar(100),
     url_type varchar(10),
     headers varchar(100),

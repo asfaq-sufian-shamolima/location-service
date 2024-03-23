@@ -1,10 +1,10 @@
-package com.shamolima.locationservice.LocationService.services;
+package com.shamolima.locationservice.services;
 
-import com.shamolima.locationservice.LocationService.dto.AddTrackerDTO;
-import com.shamolima.locationservice.LocationService.dto.TrackerListDTO;
-import com.shamolima.locationservice.LocationService.dto.ViewTrackerDTO;
-import com.shamolima.locationservice.LocationService.entities.Tracker;
-import com.shamolima.locationservice.LocationService.repositories.TrackerRepository;
+import com.shamolima.locationservice.dto.AddTrackerDTO;
+import com.shamolima.locationservice.dto.TrackerListDTO;
+import com.shamolima.locationservice.dto.ViewTrackerDTO;
+import com.shamolima.locationservice.entities.Tracker;
+import com.shamolima.locationservice.repositories.TrackerRepository;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import org.springframework.data.domain.PageRequest;

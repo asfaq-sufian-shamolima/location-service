@@ -1,4 +1,4 @@
-package com.shamolima.locationservice.LocationService;
+package com.shamolima.locationservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

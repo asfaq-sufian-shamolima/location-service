@@ -1,6 +1,6 @@
-package com.shamolima.locationservice.LocationService.utils;
+package com.shamolima.locationservice.utils;
 
-import com.shamolima.locationservice.LocationService.dto.ErrorOutput;
+import com.shamolima.locationservice.dto.ErrorOutput;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

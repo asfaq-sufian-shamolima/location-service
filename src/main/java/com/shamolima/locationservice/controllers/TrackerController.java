@@ -1,10 +1,10 @@
-package com.shamolima.locationservice.LocationService.controllers;
+package com.shamolima.locationservice.controllers;
 
-import com.shamolima.locationservice.LocationService.dto.AddTrackerDTO;
-import com.shamolima.locationservice.LocationService.dto.TrackerListDTO;
-import com.shamolima.locationservice.LocationService.dto.ViewTrackerDTO;
-import com.shamolima.locationservice.LocationService.entities.Tracker;
-import com.shamolima.locationservice.LocationService.services.TrackerService;
+import com.shamolima.locationservice.dto.AddTrackerDTO;
+import com.shamolima.locationservice.dto.TrackerListDTO;
+import com.shamolima.locationservice.dto.ViewTrackerDTO;
+import com.shamolima.locationservice.entities.Tracker;
+import com.shamolima.locationservice.services.TrackerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

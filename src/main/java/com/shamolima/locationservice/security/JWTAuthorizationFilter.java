@@ -1,4 +1,4 @@
-package com.shamolima.locationservice.LocationService.security;
+package com.shamolima.locationservice.security;
 
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSVerifier;
@@ -26,7 +26,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String token = extractToken(request);
+        /*String token = extractToken(request);
 
         try {
             if(validateToken(JWT_SECRET.getBytes(StandardCharsets.UTF_8), token)){
@@ -37,7 +37,8 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
         } catch (ParseException | JOSEException e) {
             throw new RuntimeException("Invalid token");
-        }
+        }*/
+        filterChain.doFilter(request, response);
     }
 
     private String extractToken(HttpServletRequest request) {

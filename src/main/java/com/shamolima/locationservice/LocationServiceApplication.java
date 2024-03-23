@@ -1,4 +1,4 @@
-package com.shamolima.locationservice.LocationService;
+package com.shamolima.locationservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
