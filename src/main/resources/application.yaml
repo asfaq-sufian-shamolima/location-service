@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 3001
 spring:
   profiles:
     active: dev
