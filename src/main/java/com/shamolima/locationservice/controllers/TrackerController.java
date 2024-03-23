@@ -5,6 +5,11 @@ import com.shamolima.locationservice.dto.TrackerListDTO;
 import com.shamolima.locationservice.dto.ViewTrackerDTO;
 import com.shamolima.locationservice.entities.Tracker;
 import com.shamolima.locationservice.services.TrackerService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +24,18 @@ public class TrackerController {
         this.trackerService = trackerService;
     }
 
+    @Operation(summary = "Create a new tracker")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "insert a new tracker in db",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Tracker.class))}
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Invalid token or body"
+            )
+    })
     @PostMapping
     public ResponseEntity<Tracker> addTracker(@RequestBody AddTrackerDTO addTrackerDTO) {
         Tracker tracker = trackerService.addTracker(addTrackerDTO);
